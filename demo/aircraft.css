@@ -1,0 +1,40 @@
+/* 天空 */
+#sky {
+  background-image: url('../assets/img/city_2.jpg');
+  height: 600px;
+}
+
+
+/* 🛩 战斗机 */
+#f {  
+  position: absolute;
+  font-size: xx-large;
+}
+
+/* 😷 f_bullet */
+.f_bullet {  
+  position: absolute;
+}
+
+/* 云 */
+.cloud {
+  position: absolute;
+  pointer-events: none; /* 鼠标事件向下穿透 */
+  z-index: 3;
+  opacity: 0.7;
+}
+
+/* 敌机 */
+.virus {  
+  position: absolute;
+  pointer-events: none;
+}
+
+/* 成功按钮 */
+#success_btn {
+  position: absolute;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  z-index: 5;
+}
