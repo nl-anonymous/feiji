@@ -1,6 +1,6 @@
 let data = {
 
-  // 天空
+  // 商院航拍图
   sky: {
     w: $('#sky')[0].offsetWidth, // 宽
     h: $('#sky')[0].offsetHeight, // 高
@@ -15,28 +15,28 @@ let data = {
     h: $('#f')[0].offsetHeight, // 高
     bullets: [], // 所有的子弹
     bullets_amount: 0, // 子弹总数
-    fire_sound: 'assets/sound/bullet_livon_0.13.mp3' // 开火音效
+    fire_sound: '../assets/sound/bullet_livon_0.13.mp3' // 开火音效
   },  
   
   // 定时器
   timers: [],  
   
-  // 白云
+  // logo
   clouds: [],
   
-  // 病毒
+  // 日机
   virus: {
     arr: [], // 全体
     num: 0, // 编号，用于移除
     amount: 0, // 总数
     hited: 0, // 被击落数量
     hited_percent: 0, // 击落率
-    hited_sound: 'assets/sound/爆炸.m4a'
+    hited_sound: '../assets/sound/爆炸.m4a'
   },
 
   // 成功
   success: false,
-  success_sound: 'assets/sound/success.mp3' // 音效
+  success_sound: '../assets/sound/success.mp3' // 音效
 
 }
 
@@ -89,21 +89,21 @@ var app = new Vue({
 
       this.success = false
     
-      // 口罩脸 - 子弹
+      // 兔子 - 子弹
       this.timers.push( setInterval( this.bullet_fire, 400 ))
       this.timers.push( setInterval( this.bullet_move, 10 ))
       
-      // 白云
+      // 商院logo
       this.timers.push( setInterval( this.cloud_lunch, 2000 ))
       this.timers.push( setInterval( this.cloud_move, 500 ))
 
-      // 病毒 - 敌机
+      // 日本飞机 - 敌机
       this.timers.push( setInterval( this.virus_lunch, 100 ))
       this.timers.push( setInterval( this.virus_move, 100 ))
 
     },
 
-    // 白云出现
+    // logo出现
     cloud_lunch(){
       let ok = Math.ceil( Math.random() * 100 )
           // 一半的概率
@@ -124,7 +124,7 @@ var app = new Vue({
       }
     },
 
-    // 病毒出现
+    // 日机出现
     virus_lunch(){
       let ok = Math.ceil( Math.random() * 100 )
     
@@ -136,7 +136,7 @@ var app = new Vue({
       }
     },
     
-    // 病毒袭来
+    // 日机袭来
     virus_move(){
       for( let i = 0; i < this.virus.arr.length; i ++ ){
         let e = this.virus.arr[i]
@@ -153,7 +153,7 @@ var app = new Vue({
     // 击中检测
     hit_check( b ){
 
-      // 遍历病毒
+      // 遍历日机
       for( let i = 0; i < this.virus.arr.length; i ++ ){
 
         let e = this.virus.arr[i]
@@ -197,7 +197,7 @@ var app = new Vue({
         this.success = true
       }
     },
-        // 成功，飞机、子弹、病毒都暂停
+        // 成功，飞机、子弹、日机都暂停
     'success' : function( val ){
       if( val ){
         new Audio( this.success_sound ).play() // 成功音效

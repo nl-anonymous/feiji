@@ -1,6 +1,6 @@
 /* 天空 */
 #sky {
-  background-image: url('assets/img/city_2.jpg');
+  background-image: url('../assets/img/city_2.jpg');
   height: 600px;
 }
 
@@ -11,7 +11,7 @@
   font-size: xx-large;
 }
 
-/* 😷 f_bullet */
+/* 🐰 f_bullet */
 .f_bullet {  
   position: absolute;
 }
